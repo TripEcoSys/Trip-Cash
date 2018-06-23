@@ -86,6 +86,7 @@ Before exploring Ethereum, it is instructive to first understand how Bitcoin’s
 6.	Continue step 5 until the threshold is met (e.g. 3 signatures out of 5). Send the result in a script with the UTXO to spend. The bitcoins will transfer to the desired recipient.
 
 **Extending to Ethereum**
+
 If the goal is to emulate Bitcoin’s multisig scheme on Ethereum, we can learn a lot from the previous section. We need to create a multisignature scheme with no extraneous functionality and no in-between state. In other words, there can only be two outcomes to our multisig execution: make a transaction or do nothing.
 Note that Ethereum’s transactions are account-based rather than UTXO based, so they are more complex. By “make a transaction” I mean sign an arbitrary set of data to a specified address (which can be a contract address) with a specified value (i.e. amount of ether). In Solidity, this is represented as:
 destination.call.value(value)(data)
